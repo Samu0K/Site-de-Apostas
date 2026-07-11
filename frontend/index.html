@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo VIP de Dicas — Acesso Exclusivo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>Acesso ao Grupo VIP</h1>
+      <p class="subtitle">Envie o comprovante do seu Pix e libere seu acesso automaticamente.</p>
+    </header>
+
+    <section class="card">
+      <div id="step-upload" class="step active">
+        <label for="receipt-input" class="upload-area" id="upload-area">
+          <span id="upload-label">Clique ou arraste o print do comprovante aqui</span>
+          <input type="file" id="receipt-input" accept="image/png, image/jpeg, image/webp" hidden />
+        </label>
+        <img id="preview" class="preview" hidden alt="Preview do comprovante" />
+        <button id="submit-btn" class="btn btn-primary" disabled>Validar pagamento</button>
+      </div>
+
+      <div id="step-loading" class="step" hidden>
+        <div class="spinner"></div>
+        <p>Analisando comprovante, aguarde...</p>
+      </div>
+
+      <div id="step-success" class="step" hidden>
+        <div class="icon-success">✓</div>
+        <h2>Pagamento confirmado!</h2>
+        <p id="success-details"></p>
+        <a id="whatsapp-btn" class="btn btn-whatsapp" href="#" target="_blank" rel="noopener">
+          Entrar no grupo VIP
+        </a>
+      </div>
+
+      <div id="step-error" class="step" hidden>
+        <div class="icon-error">✕</div>
+        <h2>Não conseguimos validar</h2>
+        <p id="error-message"></p>
+        <button class="btn btn-secondary" id="retry-btn">Tentar novamente</button>
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      Conteúdo destinado a maiores de 18 anos. Apostas envolvem risco financeiro.
+      Jogue com responsabilidade. Nenhum resultado ou ganho é garantido.
+    </p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
